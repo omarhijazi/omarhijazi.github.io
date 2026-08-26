@@ -1,0 +1,144 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Sticker Pack",
+      "category": "office",
+      "price": 47.62,
+      "in_stock": false
+    },
+    {
+      "id": 2,
+      "name": "Edge Hoodie",
+      "category": "office",
+      "price": 27.93,
+      "in_stock": true
+    },
+    {
+      "id": 3,
+      "name": "Cache Hit Mug",
+      "category": "apparel",
+      "price": 44.21,
+      "in_stock": false
+    },
+    {
+      "id": 4,
+      "name": "Origin Shield T-Shirt",
+      "category": "apparel",
+      "price": 5.18,
+      "in_stock": true
+    },
+    {
+      "id": 5,
+      "name": "Fleece Cap",
+      "category": "apparel",
+      "price": 4.99,
+      "in_stock": true
+    },
+    {
+      "id": 6,
+      "name": "Enamel Pin Set",
+      "category": "office",
+      "price": 53.06,
+      "in_stock": true
+    },
+    {
+      "id": 7,
+      "name": "Laptop Sleeve",
+      "category": "stickers",
+      "price": 45.74,
+      "in_stock": true
+    },
+    {
+      "id": 8,
+      "name": "Water Bottle",
+      "category": "stickers",
+      "price": 1.96,
+      "in_stock": true
+    },
+    {
+      "id": 9,
+      "name": "Notebook",
+      "category": "stickers",
+      "price": 42.8,
+      "in_stock": true
+    },
+    {
+      "id": 10,
+      "name": "Vinyl Sticker Sheet",
+      "category": "office",
+      "price": 32.5,
+      "in_stock": true
+    },
+    {
+      "id": 11,
+      "name": "Zip Hoodie",
+      "category": "apparel",
+      "price": 35.22,
+      "in_stock": false
+    },
+    {
+      "id": 12,
+      "name": "Beanie",
+      "category": "stickers",
+      "price": 36.43,
+      "in_stock": false
+    },
+    {
+      "id": 13,
+      "name": "Tote Bag",
+      "category": "drinkware",
+      "price": 22.37,
+      "in_stock": true
+    },
+    {
+      "id": 14,
+      "name": "Desk Mat",
+      "category": "drinkware",
+      "price": 17.34,
+      "in_stock": true
+    },
+    {
+      "id": 15,
+      "name": "Lanyard",
+      "category": "drinkware",
+      "price": 1.64,
+      "in_stock": true
+    },
+    {
+      "id": 16,
+      "name": "Coaster Set",
+      "category": "office",
+      "price": 5.93,
+      "in_stock": true
+    },
+    {
+      "id": 17,
+      "name": "Long Sleeve Tee",
+      "category": "office",
+      "price": 3.68,
+      "in_stock": true
+    },
+    {
+      "id": 18,
+      "name": "Socks",
+      "category": "stickers",
+      "price": 11.74,
+      "in_stock": true
+    },
+    {
+      "id": 19,
+      "name": "Phone Grip",
+      "category": "office",
+      "price": 20.65,
+      "in_stock": false
+    },
+    {
+      "id": 20,
+      "name": "Keychain",
+      "category": "office",
+      "price": 4.02,
+      "in_stock": true
+    }
+  ]
+}

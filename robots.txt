@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /checkout.html
+Disallow: /cart.html
+Allow: /
+
+Sitemap: https://fastly-swag.example.com/sitemap.xml

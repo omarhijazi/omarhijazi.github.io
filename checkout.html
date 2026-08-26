@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — Fastly Swag</title>
+  <link rel="icon" href="images/icon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt="" />Fastly Swag</a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="images.html">Gallery</a>
+      <a href="search.html">Search</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2 style="margin-top:28px;">Checkout</h2>
+  <form class="panel" method="post" action="checkout.html">
+    <label for="name">Name on card</label>
+    <input id="name" name="name" type="text" autocomplete="off" />
+    <label for="card">Card number</label>
+    <input id="card" name="card" type="text" autocomplete="off" placeholder="4242 4242 4242 4242" />
+    <label for="exp">Expiry</label>
+    <input id="exp" name="exp" type="text" autocomplete="off" placeholder="MM/YY" />
+    <button type="submit">Pay $63.00</button>
+  </form>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    &copy; 2026 Fastly Swag. Not a real store.
+  </div>
+</footer>
+
+</body>
+</html>

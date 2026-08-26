@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why shielding matters more than people think — Fastly Swag</title>
+  <link rel="icon" href="../images/icon.png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="../index.html"><img src="../images/logo.png" alt="" />Fastly Swag</a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="../images.html">Gallery</a>
+      <a href="../search.html">Search</a>
+      <a href="../cart.html">Cart</a>
+      <a href="../login.html">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="post" style="margin-top:28px;">
+    <h1>Why shielding matters more than people think</h1>
+    <div class="meta">March 2, 2026 &middot; Engineering notes</div>
+    <p>It's easy to assume a CDN's edge network is doing most of the work, and mostly
+    it is. But every cache miss still has to go somewhere, and if your origin is
+    getting hit from dozens of edge locations at once, a traffic spike can look like
+    an outage even when the CDN itself is healthy.</p>
+    <p>Designating a single shield location changes that shape entirely. Instead of
+    every edge POP fetching independently, they all collapse through one point close
+    to the origin. The origin sees one request instead of many, and the rest of the
+    network fans back out from there.</p>
+    <p>It costs nothing to set up and it's easy to forget about once it's on — which
+    is usually a sign it's working.</p>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    &copy; 2026 Fastly Swag. Internal demo store, not a real shop.
+  </div>
+</footer>
+
+</body>
+</html>

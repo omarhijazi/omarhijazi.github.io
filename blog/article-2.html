@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What AI crawlers actually do to your traffic — Fastly Swag</title>
+  <link rel="icon" href="../images/icon.png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="../index.html"><img src="../images/logo.png" alt="" />Fastly Swag</a>
+    <nav class="links">
+      <a href="../index.html">Home</a>
+      <a href="../images.html">Gallery</a>
+      <a href="../search.html">Search</a>
+      <a href="../cart.html">Cart</a>
+      <a href="../login.html">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <article class="post" style="margin-top:28px;">
+    <h1>What AI crawlers actually do to your traffic</h1>
+    <div class="meta">February 14, 2026 &middot; Engineering notes</div>
+    <p>A growing share of the requests hitting any public site aren't people at all —
+    they're automated fetchers pulling in content to train or answer questions from
+    language models. Some announce themselves honestly in their user agent. Others
+    don't bother.</p>
+    <p>The well-behaved ones respect <code>robots.txt</code> and identify themselves
+    clearly, which makes them easy to separate from the traffic you actually care
+    about. The rest look almost identical to a normal browser unless you're looking
+    for the small tells: missing headers, unusual request timing, or a user agent
+    that doesn't match how the client actually behaves.</p>
+    <p>None of this is inherently bad — a lot of that traffic is harmless. But knowing
+    the difference between "a crawler indexed this page" and "a script is scraping
+    every page on the site once a minute" is the whole point of watching for it.</p>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    &copy; 2026 Fastly Swag. Internal demo store, not a real shop.
+  </div>
+</footer>
+
+</body>
+</html>

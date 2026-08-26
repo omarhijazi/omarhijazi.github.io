@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Fastly Swag</title>
+  <link rel="icon" href="images/icon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt="" />Fastly Swag</a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="images.html">Gallery</a>
+      <a href="search.html">Search</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2 style="margin-top:28px;">Image optimizer playground</h2>
+  <div class="io-panel">
+    <div class="io-layout">
+      <div class="io-preview-box">
+        <img id="io-preview" src="images/hero.jpg" alt="Preview" />
+      </div>
+      <div class="io-controls">
+        <div class="group">
+          <div class="group-label">Image</div>
+          <div class="io-btn-row">
+            <button class="io-btn" data-io-image="hero.jpg" onclick="ioSetImage('hero.jpg')">hero</button>
+            <button class="io-btn" data-io-image="product-1.jpg" onclick="ioSetImage('product-1.jpg')">product-1</button>
+            <button class="io-btn" data-io-image="product-2.jpg" onclick="ioSetImage('product-2.jpg')">product-2</button>
+            <button class="io-btn" data-io-image="logo.png" onclick="ioSetImage('logo.png')">logo</button>
+          </div>
+        </div>
+        <div class="group">
+          <div class="group-label">Width</div>
+          <div class="io-btn-row">
+            <button class="io-btn" data-io-width="null" onclick="ioSetWidth(null)">original</button>
+            <button class="io-btn" data-io-width="800" onclick="ioSetWidth(800)">800</button>
+            <button class="io-btn" data-io-width="400" onclick="ioSetWidth(400)">400</button>
+            <button class="io-btn" data-io-width="200" onclick="ioSetWidth(200)">200</button>
+            <button class="io-btn" data-io-width="80" onclick="ioSetWidth(80)">80</button>
+          </div>
+        </div>
+        <div class="group">
+          <div class="group-label">Format</div>
+          <div class="io-btn-row">
+            <button class="io-btn" data-io-format="null" onclick="ioSetFormat(null)">auto</button>
+            <button class="io-btn" data-io-format="webp" onclick="ioSetFormat('webp')">webp</button>
+            <button class="io-btn" data-io-format="avif" onclick="ioSetFormat('avif')">avif</button>
+            <button class="io-btn" data-io-format="jpg" onclick="ioSetFormat('jpg')">jpg</button>
+            <button class="io-btn" data-io-format="png" onclick="ioSetFormat('png')">png</button>
+          </div>
+        </div>
+        <div class="group">
+          <div class="group-label">Quality</div>
+          <div class="io-btn-row">
+            <button class="io-btn" data-io-quality="null" onclick="ioSetQuality(null)">default</button>
+            <button class="io-btn" data-io-quality="90" onclick="ioSetQuality(90)">90</button>
+            <button class="io-btn" data-io-quality="50" onclick="ioSetQuality(50)">50</button>
+            <button class="io-btn" data-io-quality="20" onclick="ioSetQuality(20)">20</button>
+          </div>
+        </div>
+        <button class="io-btn" onclick="ioReset()" style="margin-top:4px;">Reset</button>
+
+        <div class="io-url-row">
+          <div class="label">Resulting path (append to your Fastly domain):</div>
+          <code id="io-url">images/hero.jpg</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>All images</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="images/hero.jpg" alt="Dark background with red accent lighting" />
+      <div class="card-body"><p>hero.jpg — large, 2400px wide</p></div>
+    </div>
+    <div class="card">
+      <img src="images/product-1.jpg" alt="Sticker pack" />
+      <div class="card-body"><p>product-1.jpg — 1100px wide</p></div>
+    </div>
+    <div class="card">
+      <img src="images/product-2.jpg" alt="Hoodie" />
+      <div class="card-body"><p>product-2.jpg — 1100px wide</p></div>
+    </div>
+    <div class="card">
+      <img src="images/product-3.jpg" alt="Mug" />
+      <div class="card-body"><p>product-3.jpg — 1100px wide</p></div>
+    </div>
+    <div class="card">
+      <img src="images/logo.png" alt="Fastly Swag logo mark" style="object-fit:contain;background:#fff;" />
+      <div class="card-body"><p>logo.png — 240px, transparent</p></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    &copy; 2026 Fastly Swag. Internal demo store, not a real shop.
+  </div>
+</footer>
+
+<script src="assets/js/io-demo.js"></script>
+</body>
+</html>

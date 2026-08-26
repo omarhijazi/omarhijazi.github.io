@@ -1,0 +1,9 @@
+{
+  "report": "weekly-inventory-snapshot",
+  "generated": "static-sample",
+  "warehouses": [
+    { "id": "wh-1", "location": "Portland, OR", "units": 4210 },
+    { "id": "wh-2", "location": "Reno, NV", "units": 1875 }
+  ],
+  "note": "Not linked from any page nav. Left undocumented on purpose."
+}
