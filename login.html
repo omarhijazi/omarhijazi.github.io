@@ -44,6 +44,13 @@
     var password = document.getElementById("password").value;
     var errorEl = document.getElementById("login-error");
 
+    // Fire a real request for every attempt, success or failure, so
+    // Fastly always has fresh, uncached traffic to inspect.
+    fetch("login.html", {
+      method: "POST",
+      body: new URLSearchParams({ email: email, password: password }),
+    }).catch(function () {});
+
     if (email === "demo@fastlyswag.com" && password === "demo1234") {
       window.location.href = "account.html";
     } else {
