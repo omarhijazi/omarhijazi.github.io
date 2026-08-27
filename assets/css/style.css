@@ -177,6 +177,13 @@ form.panel button {
 
 form.panel button:hover { background: #e0181d; }
 
+.form-error {
+  display: none;
+  color: #c0272d;
+  font-size: 13px;
+  margin: -6px 0 14px;
+}
+
 /* search */
 
 form.search {

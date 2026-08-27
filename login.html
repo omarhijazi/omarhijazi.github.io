@@ -6,6 +6,7 @@
   <title>Sign in — Fastly Swag</title>
   <link rel="icon" href="images/icon.png" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="/_fs-ch-1T1wmsGaOgGaSxcX/assets/script.js"></script>
 </head>
 <body>
 
@@ -24,15 +25,34 @@
 
 <main class="wrap">
   <h2 style="margin-top:28px;">Sign in</h2>
-  <form class="panel" method="post" action="login.html">
+  <form class="panel" onsubmit="return handleLogin(event)">
     <label for="email">Email</label>
     <input id="email" name="email" type="text" autocomplete="off" />
     <label for="password">Password</label>
     <input id="password" name="password" type="password" autocomplete="off" />
+    <div id="login-error" class="form-error"></div>
     <button type="submit">Sign in</button>
   </form>
   <p style="margin-top:14px;"><a href="register.html">Create an account</a></p>
+  <p style="margin-top:6px; color:#8a938e; font-size:13px;">Demo login: <code>demo@fastlyswag.com</code> / <code>demo1234</code></p>
 </main>
+
+<script>
+  function handleLogin(e) {
+    e.preventDefault();
+    var email = document.getElementById("email").value.trim();
+    var password = document.getElementById("password").value;
+    var errorEl = document.getElementById("login-error");
+
+    if (email === "demo@fastlyswag.com" && password === "demo1234") {
+      window.location.href = "account.html";
+    } else {
+      errorEl.textContent = "Invalid email or password.";
+      errorEl.style.display = "block";
+    }
+    return false;
+  }
+</script>
 
 <footer class="site">
   <div class="wrap">

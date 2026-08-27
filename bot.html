@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automated traffic detected — Fastly Swag</title>
+  <link rel="icon" href="images/icon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html"><img src="images/logo.png" alt="" />Fastly Swag</a>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="images.html">Gallery</a>
+      <a href="search.html">Search</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Sign in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 style="margin-top:28px;">Automated traffic detected</h1>
+  <p style="color:#5a6460; max-width:520px;">
+    Client-side checks on the previous page flagged this session as a likely
+    automated browser rather than a person.
+  </p>
+
+  <div class="io-panel" style="max-width:480px;">
+    <div class="group-label">Detection detail</div>
+    <p style="font-size:13.5px; margin:6px 0;"><strong>Redirected from:</strong> <span id="from-out">—</span></p>
+    <p style="font-size:13.5px; margin:6px 0;"><strong>Signals matched:</strong> <span id="reason-out">—</span></p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    &copy; 2026 Fastly Swag. Internal demo store, not a real shop.
+  </div>
+</footer>
+
+<script>
+  var params = new URLSearchParams(window.location.search);
+  document.getElementById("from-out").textContent = params.get("from") || "—";
+  document.getElementById("reason-out").textContent = params.get("reason") || "—";
+</script>
+</body>
+</html>
