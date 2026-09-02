@@ -34,7 +34,7 @@
     <button type="submit">Sign in</button>
   </form>
   <p style="margin-top:14px;"><a href="register.html">Create an account</a></p>
-  <p style="margin-top:6px; color:#8a938e; font-size:13px;">Demo login: <code>demo@fastlyswag.com</code> / <code>demo1234</code></p>
+  <p style="margin-top:6px; color:#8a938e; font-size:13px;">Password is checked by a real backend at <code>/api/login</code> — try <code>demo1234</code> for success, anything else for failure, or a common breached password to trigger Deception.</p>
 </main>
 
 <script>
@@ -43,29 +43,28 @@
     var email = document.getElementById("email").value.trim();
     var password = document.getElementById("password").value;
     var errorEl = document.getElementById("login-error");
-    var success = email === "demo@fastlyswag.com" && password === "demo1234";
+    errorEl.style.display = "none";
 
-    // Always await this -- on success we navigate away right after,
-    // and an un-awaited fetch gets cancelled by that navigation
-    // before it's actually sent.
     try {
-      await fetch("api/login.json", {
+      var response = await fetch("api/login", {
         method: "POST",
-        body: new URLSearchParams({
-          email: email,
-          password: password,
-          result: success ? "success" : "failure",
-        }),
+        body: new URLSearchParams({ email: email, password: password }),
       });
-    } catch (err) {
-      // Network/method errors (e.g. 404/405 from a static host) are
-      // expected here and fine -- the POST still reached Fastly.
-    }
+      var data = await response.json().catch(function () { return {}; });
 
-    if (success) {
-      window.location.href = "account.html";
-    } else {
-      errorEl.textContent = "Invalid email or password.";
+      // Purely driven by what the backend actually decided -- no
+      // client-side password check exists anywhere in this file.
+      // If Fastly's Deception rule swapped the password before this
+      // request reached the backend, the backend still rejects it
+      // normally, and that's exactly what shows up here.
+      if (data.result === "success") {
+        window.location.href = "account.html";
+      } else {
+        errorEl.textContent = "Invalid email or password.";
+        errorEl.style.display = "block";
+      }
+    } catch (err) {
+      errorEl.textContent = "Request failed.";
       errorEl.style.display = "block";
     }
   }

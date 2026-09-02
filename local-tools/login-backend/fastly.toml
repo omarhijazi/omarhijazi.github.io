@@ -1,0 +1,16 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = ["hijaziomar036@gmail.com"]
+cloned_from = "https://github.com/fastly/compute-starter-kits/tree/main/starter-kits/javascript/default"
+description = "Test Backend API for Login"
+language = "javascript"
+manifest_version = 3
+name = "login-backend"
+service_id = ""
+
+[local_server]
+
+[scripts]
+  build = "npm run build"
+  post_init = "npm install"
