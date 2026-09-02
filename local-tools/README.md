@@ -1,25 +1,60 @@
 # local-tools/
 
-Everything in this folder is meant to be run on your own machine, not
-deployed to GitHub Pages. You can delete this folder from your repo's
-published branch, or just leave it -- GitHub Pages serving it doesn't
-cause any harm, it's just inert JS that nothing on the site links to.
+Everything in this folder runs on your own machine -- it's not part of
+the deployed site. You can delete this folder from your published
+GitHub Pages branch, or leave it (it's inert, nothing on the site
+links to it).
 
-## puppeteer-headless-test.js
+## ai-traffic-test.js
 
-Generates real headless-browser traffic against a URL you give it, and
-reports whether Fastly's Bot Management redirected it to `/bot.html`.
-The detection and redirect both happen on Fastly's side (via the Bot
-Management client-side script tag in `login.html` plus an NGWAF rule
-that redirects flagged sessions) -- this script just observes the
-outcome.
+Sends requests to a URL on your site with the GPTBot, ClaudeBot, and a
+plain-browser User-Agent, one after another, so you can compare how
+Fastly treats each. Node can set any User-Agent it wants (unlike
+browser JS, which is blocked from doing this) -- that's why this has
+to run locally instead of as a button on the site.
 
-Setup:
+Requires Node 18+ (for built-in `fetch`). Check with `node -v`.
+
+Run:
+```
+node ai-traffic-test.js
+node ai-traffic-test.js https://hello.omarfoobar.com/blog/article-2.html
+```
+
+Then check the Fastly UI (Security -> Bot Management / AI Bot
+Management dashboard) for the three requests and compare how each was
+classified.
+
+## puppeteer-login-test.js
+
+Launches headless Chrome, loads the login page, waits for Fastly's Bot
+Management client-side script to fingerprint the session, then
+actually types into the email/password fields and clicks **Sign in**
+-- a real automated form submission.
+
+Setup (one time):
 ```
 npm install puppeteer
 ```
 
-Run:
+Run with defaults (correct demo credentials, single attempt):
 ```
-node puppeteer-headless-test.js https://swag.yourdomain.com/login.html
+node puppeteer-login-test.js
 ```
+
+Run against a specific URL / credentials:
+```
+node puppeteer-login-test.js https://hello.omarfoobar.com/login.html demo@fastlyswag.com demo1234
+```
+
+Run several attempts back to back (credential-stuffing style, useful
+for testing Bot Management or Edge Rate Limiting):
+```
+node puppeteer-login-test.js https://hello.omarfoobar.com/login.html demo@fastlyswag.com wrongpass 5
+```
+
+The script prints, per attempt, whether it ended up on:
+- `/bot.html` -- Fastly's Bot Management flagged the session
+- `/account.html` -- login succeeded, not flagged
+- still on `/login.html` -- prints the inline error text if the
+  credentials were simply wrong

@@ -1,0 +1,4 @@
+{
+  "endpoint": "/api/login.json",
+  "note": "Static placeholder. The real point of this file is to give login.html a realistic-looking API path to POST to -- GitHub Pages will return 404/405 for the POST itself, which is fine: the request still reaches Fastly and is fully inspectable either way."
+}
