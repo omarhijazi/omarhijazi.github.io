@@ -48,6 +48,15 @@
     try {
       var response = await fetch("api/login", {
         method: "POST",
+        headers: {
+          // Overriding this explicitly, without ;charset=UTF-8, sends
+          // the same Content-Type value plain curl uses by default --
+          // which is the exact signal that triggers Fastly's
+          // Deception rule. Leaving this header out entirely would
+          // let the browser auto-set the ";charset=UTF-8" version
+          // instead, which gets treated as legitimate.
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
         body: new URLSearchParams({ email: email, password: password }),
       });
       var data = await response.json().catch(function () { return {}; });
